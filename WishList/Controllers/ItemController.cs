@@ -38,9 +38,10 @@ namespace WishList.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Delete(int itemId)
+        [HttpGet]
+        public IActionResult Delete(int id)
         {
-            Item itemToDelete = dbContext.Items.Find(itemId);
+            Item itemToDelete = dbContext.Items.Find(id);
             dbContext.Items.Remove(itemToDelete);
             dbContext.SaveChanges();
             return RedirectToAction(nameof(Index));

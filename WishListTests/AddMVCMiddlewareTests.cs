@@ -43,7 +43,6 @@ namespace WishListTests
         [Fact(DisplayName = "Configure MVC Middleware In Configure @configure-useendpoints-middleware-in-configure")]
         public void UseEndpointsAdded()
         {
-            var webHost = CreateDefaultBuilder().UseStartup<Startup>().Build();
             var filePath = $"../../../../WishList/Startup.cs";
             string file;
             using (var streamReader = new StreamReader(filePath)) {
